@@ -8,7 +8,7 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 # Weather news RSS feed URL (Replace with actual feed)
-RSS_FEED_URL = "https://vnexpress.net/rss/thoi-su.rss"
+RSS_FEED_URL = "https://vnexpress.net/rss/cong-nghe.rss"
 
 def get_weather_news():
     """Fetches weather news from an RSS feed and returns a list of news items."""
