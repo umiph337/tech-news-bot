@@ -26,7 +26,7 @@ def get_weather_news():
 
 def format_news(news):
     """Formats the news list into a Telegram-friendly message using HTML."""
-    message = "🌤️ <b>Daily Weather News Summary</b> 🌤️\n\n"
+    message = "🌤️ <b>Daily Tech News Summary</b> 🌤️\n\n"
 
     for item in news:
         title = html.escape(item['title'])  # Escape HTML characters
