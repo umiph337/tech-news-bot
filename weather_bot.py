@@ -57,4 +57,6 @@ if __name__ == "__main__":
     
     if weather_news:
         formatted_message = format_news(weather_news)
-        send_telegram_message(for
+        send_telegram_message(formatted_message)
+    else:
+        print("No weather news found.")
