@@ -12,10 +12,21 @@ def get_weather_news():
         articles.append({"title": entry.title, "summary": summary, "link": entry.link})
     return articles
 
+import re
+
+def escape_markdown(text):
+    """Escapes special Markdown characters for Telegram"""
+    escape_chars = r'_*[]()~`>#+-=|{}.!'
+    return "".join(f"\\{char}" if char in escape_chars else char for char in text)
+
 def format_news(news):
     message = "🌤️ *Daily Weather News Summary* 🌤️\n\n"
     for item in news:
-        message += f"🔹 *{item['title']}*\n📌 {item['summary']}...\n🔗 [Read more]({item['link']})\n\n"
+        title = escape_markdown(item['title'])
+        summary = escape_markdown(item['summary'])
+        link = item['link']  # No need to escape links
+
+        message += f"🔹 *{title}*\n📌 {summary}...\n🔗 [Read more]({link})\n\n"
     return message
 
 def send_telegram_message(message):
